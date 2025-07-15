@@ -1,9 +1,21 @@
+body {
+    height: 100vh;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom right, #888888, #454545, #888888, #aaaaaa);
+}
 
+h1 {
+    width: 60%;
+    margin: 1.5rem auto;
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+}
 
-
-.calc-ctn {
+.calculator {
     display: flex;
     flex-direction: column;
+    margin: 5rem auto 0;
     gap: 20px;
     width: 300px;
     height: 500px;
@@ -13,6 +25,11 @@
     box-shadow: 0 10px rgb(163, 14, 44);
     border: 4px solid rgb(163, 14, 44);
     position: relative;
+}
+.calc-ctn {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 .calc-ctn:hover {
     cursor: pointer;
@@ -54,4 +71,9 @@
 }
 #zero {
     width: 140px;
+}
+.btn:active {
+  background-color: #404040;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }

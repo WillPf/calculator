@@ -8,7 +8,7 @@ const screen = document.querySelector(".display-ctn");
 
 calculator.addEventListener("click", e => {
     let key = e.target.innerText;
-
+    
     if (key == "/" ) operator = div;
     else if (key == "*" ) operator = mul;
     else if (key == "-" ) operator = sub;
@@ -66,3 +66,6 @@ function operate(a, b, operation) {
 function display(n) {
     screen.innerText = n;
 }
+
+// TODO1: Round high numbers
+// TODO2: Remove extra . if decimal
