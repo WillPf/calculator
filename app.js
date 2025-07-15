@@ -14,12 +14,26 @@ calculator.addEventListener("click", e => {
     else if (key == "-" ) operator = sub;
     else if (key == "+" ) operator = add;
     else if (key == "=") display(operate(+n1, +n2, operator));
+    else if (key == "CE" ) {
+        if (operator == null) {
+            n1 = n1.slice(0, -1);
+            display(n1);
+        } else {
+            n2 = n2.slice(0, -1);
+            display(n);
+        }    
+    }
+    else if (key == "C" ) {
+        n1 = "";
+        n2 = "";
+        operator = null;
+        display(0);
+    }
     else {
         if (operator == null) {
             n1 += key;
             display(n1);
-        }
-        else {
+        } else {
             n2 += key;
             display(n2);
         }
