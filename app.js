@@ -1,10 +1,9 @@
+const calculator = document.querySelector(".calc-ctn");
+const screen = document.querySelector(".display-ctn");
 
 let n1 = "";
 let n2 = "";
 let operator = null;
-
-const calculator = document.querySelector(".calc-ctn");
-const screen = document.querySelector(".display-ctn");
 
 calculator.addEventListener("click", e => {
     let key = e.target.innerText;
@@ -31,9 +30,11 @@ calculator.addEventListener("click", e => {
     }
     else {
         if (operator == null) {
+            if (key == "." && n1.includes(".")) key = "";
             n1 += key;
             display(n1);
         } else {
+            if (key == "." && n2.includes(".")) key = "";
             n2 += key;
             display(n2);
         }
@@ -68,4 +69,4 @@ function display(n) {
 }
 
 // TODO1: Round high numbers
-// TODO2: Remove extra . if decimal
+// TODO3: Remove first extra zeros if user add them
