@@ -32,10 +32,12 @@ calculator.addEventListener("click", e => {
         if (operator == null) {
             if (key == "." && n1.includes(".")) key = "";
             n1 += key;
+            n1 = checkForLeadingZero(n1);
             display(n1);
         } else {
             if (key == "." && n2.includes(".")) key = "";
             n2 += key;
+            n2 = checkForLeadingZero(n2);
             display(n2);
         }
     }
@@ -68,5 +70,10 @@ function display(n) {
     screen.innerText = n;
 }
 
-// TODO1: Round high numbers
-// TODO3: Remove first extra zeros if user add them
+// Removes the first 0 if the first character of the string is a 0 and the second char is not a .
+function checkForLeadingZero(string) {
+    const regex = /^0[^.]/;
+    if (regex.test(string)) return string.substring(1);
+    else return string;
+}
+
